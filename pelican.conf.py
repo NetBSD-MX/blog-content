@@ -3,12 +3,16 @@
 
 #AUTHOR = u"Default Author"
 #DATE_FORMATS
+USE_FOLDER_AS_CATEGORY = False
 DEFAULT_CATEGORY = u"General"
 DEFAULT_DATE_FORMAT = u"%A, %d de %B de %Y"
 DISPLAY_PAGES_ON_MENU = True
 DEFAULT_DATE = 'fs'
-#JINJA_EXTENSIONS
+#DEFAULT_METADATA
+#FILENAME_METADATA
 DELETE_OUTPUT_DIRECTORY = False
+#FILES_TO_COPY
+#JINJA_EXTENSIONS
 LOCALE = 'es_MX'
 #MARKUP
 #MD_EXTENSIONS
@@ -19,17 +23,21 @@ PAGE_DIR = 'pages'
 ARTICLE_DIR = 'articles'
 #ARTICLE_EXCLUDES
 PDF_GENERATOR = False
+OUTPUT_SOURCES = False
+OUTPUT_SOURCES_EXTENSION = '.text'
 RELATIVE_URLS = True
 #PLUGINS
 SITENAME = u"Grupo de Usuarios de NetBSD en México"
 SITEURL = 'http://netbsd-mx.github.com'
+#TEMPLATE_PAGES
 STATIC_PATHS = [ "images", ]
 TIMEZONE = 'America/Mexico_City'
 TYPOGRIFY = False
-LESS_GENERATOR = False
 #DIRECT_TEMPLATES
 #PAGINATED_DIRECT_TEMPLATES
 SUMMARY_MAX_LENGTH = 56
+#EXTA_TEMPLATES_PATHS
+#ASCIIDOC_OPTIONS
 
 #ARTICLE_URL
 #ARTICLE_SAVE_AS
@@ -47,8 +55,10 @@ SUMMARY_MAX_LENGTH = 56
 #TAG_SAVE_AS
 
 FEED_DOMAIN = SITEURL
-FEED_ATOM = 'feeds/all.atom.xml'
-FEED_RSS = 'feeds/all.rss.xml'
+FEED_ATOM = 'feeds/feed.atom.xml'
+FEED_RSS = 'feeds/feed.rss.xml'
+FEED_ALL_ATOM = 'feeds/all.atom.xml'
+FEED_ALL_RSS = 'feeds/all.rss.xml'
 CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
 CATEGORY_FEED_RSS = 'feeds/%s.rss.xml'
 TAG_FEED_ATOM = 'feeds/%s-tag.atom.xml'
@@ -62,15 +72,15 @@ DEFAULT_PAGINATION = 7
 #TAG_CLOUD_MAX_ITEMS
 
 DEFAULT_LANG = 'es'
-TRANSLATION_FEED = 'feeds/all-%s.atom.xml'
+TRANSLATION_FEED_ATOM = 'feeds/all-%s.atom.xml'
+TRANSLATION_FEED_RSS = 'feeds/all-%s.rss.xml'
 
 NEWEST_FIRST_ARCHIVES = True
 REVERSE_CATEGORY_ORDER = False
 
-THEME = 'Just-Read'
+THEME = 'basic'
 #THEME_STATIC_PATHS
 #CSS_FILE
-#WEBASSETS
 
 #DISQUS_SITENAME
 GITHUB_URL = 'https://github.com/organizations/NetBSD-MX'
