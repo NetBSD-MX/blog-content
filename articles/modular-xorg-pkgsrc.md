@@ -64,3 +64,4 @@ Referencias
 [3]: http://www.pkgsrc.org/ "pkgsrc"
 [4]: http://www.x.org/ "X.Org Foundation"
 [5]: http://www.netbsd.org/docs/guide/en/chap-x.html "The NetBSD Guide"
+
