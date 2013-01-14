@@ -78,7 +78,7 @@ TRANSLATION_FEED_RSS = 'feeds/all-%s.rss.xml'
 NEWEST_FIRST_ARCHIVES = True
 REVERSE_CATEGORY_ORDER = False
 
-THEME = 'bootlex'
+THEME = 'simple'
 #THEME_STATIC_PATHS
 #CSS_FILE
 
