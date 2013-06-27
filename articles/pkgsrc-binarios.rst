@@ -1,5 +1,5 @@
 Usando pkgsrc e instalando paquetes binarios
-#############################################
+############################################
 :date: 2013-06-26 16:40
 :tags: pkgsrc, binarios, pkgin, paquetes
 :category: NetBSD, pkgsrc
@@ -7,8 +7,8 @@ Usando pkgsrc e instalando paquetes binarios
 :slug: pkgsrc-binarios
 :lang: es
 
-Que es pkgsrc ?
----------------
+¿Que es pkgsrc ?
+================
 
 .. image:: ./static/images/pkgsrc.png
 
@@ -18,8 +18,8 @@ UNIX, actualmente pkgsrc_ cuenta con mas de 12000 paquetes y es
 independiente del sistema base, lo que lo hace altamente portable y
 eficiente. A continuacion se detalla su uso.
 
-Usando pkgsrc
--------------
+Inicializando pkgsrc
+====================
 
 Establecemos las variables usadas por cvs
 -----------------------------------------
@@ -43,7 +43,7 @@ Con estas simples instrucciones tenemos instalado y actualizado el arbol
 de paquetes de NetBSD.
 
 Instalando paquetes via pkgsrc
-------------------------------
+==============================
 
 Para instalar ImageMagick desde pkgsrc:
 ---------------------------------------
@@ -73,7 +73,7 @@ correcto, este nombre del paquete es de ejemplo).
 ``# pkg_delete ImageMagick-VERSION.tgz``
 
 Introduccion a pkgin
---------------------
+====================
 
 NetBSD_ ofrece una utileria llamada ``pkgin`` al estilo ``pacman`` en
 ArchLinux_ o ``yum`` en Fedora_, que permite instalar paquetes binarios
@@ -100,11 +100,8 @@ Siguiente paso, actualizar el arbol de paquetes localmente;
 
 ``# pkgin update``
 
-
-**************************************************
 Usando pkgin
-**************************************************
-
+------------
 Ejecutando pkgin sin argumentos, obtenemos:
   ::
 
@@ -143,9 +140,9 @@ Ejecutando pkgin sin argumentos, obtenemos:
       pkg-descr           (pd  ) -  Show remote package's long-description.
       pkg-build-defs      (pbd ) -  Show remote package's build definitions.
 
-*********************************************************
+
 Ejemplos:
-*********************************************************
+---------
 ::
 
   # pkgin se sudo             ;Busca sudo en el arbol local de paquetes
@@ -157,7 +154,6 @@ Ejemplos:
   # pkgin list                ;Muestra los paquetes instalados
 
   # pkgin                     ;Ayuda
-
 
 
 .. _NetBSD:    http://www.netbsd.org
