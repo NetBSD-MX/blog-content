@@ -7,7 +7,7 @@ Usando pkgsrc e instalando paquetes binarios
 :lang: es
 
 Que es pkgsrc ?
-#################
+---------------
 
 .. image:: images/pkgsrc.png
 
@@ -42,7 +42,7 @@ Con estas simples instrucciones tenemos instalado y actualizado el arbol
 de paquetes de NetBSD.
 
 Instalando paquetes via pkgsrc
-##############################
+------------------------------
 
 Para instalar ImageMagick desde pkgsrc:
 ---------------------------------------
@@ -72,7 +72,7 @@ correcto, este nombre del paquete es de ejemplo).
 ``# pkg_delete ImageMagick-VERSION.tgz``
 
 Introduccion a pkgin
-#####################
+--------------------
 
 NetBSD_ ofrece una utileria llamada ``pkgin`` al estilo ``pacman`` en
 ArchLinux_ o ``yum`` en Fedora_, que permite instalar paquetes binarios
