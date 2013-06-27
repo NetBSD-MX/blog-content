@@ -3,14 +3,14 @@ Usando pkgsrc e instalando paquetes binarios
 :date: 2013-06-26 16:40
 :tags: pkgsrc, binarios, pkgin, paquetes
 :category: NetBSD, pkgsrc
-:author: ficovh
+:author: Francisco Valladolid
 :slug: pkgsrc-binarios
 :lang: es
 
 Que es pkgsrc ?
 ---------------
 
-.. image:: images/pkgsrc.png
+.. image:: ./static/images/pkgsrc.png
 
 pkgsrc_ es un con junto de makefiles que permiten la creacion e
 instalacion de software de terceros en NetBSD_ y otros sistemas tipo
