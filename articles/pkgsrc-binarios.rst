@@ -3,6 +3,7 @@ Usando pkgsrc e instalando paquetes binarios
 :date: 2013-06-26 16:40
 :tags: pkgsrc, binarios, pkgin, paquetes
 :category: NetBSD, pkgsrc
+:author: ficovh
 :slug: pkgsrc-binarios
 :lang: es
 
