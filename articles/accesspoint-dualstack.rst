@@ -3,7 +3,7 @@ Access point con doble stack y seguridad WPA
 :date: 2013-07-02 16:40
 :tags: netbsd,redes, wireless
 :category: NetBSD
-:author: Francisco Valladolid
+:author: Heron Gallegos
 :slug: accesspoint-dualstack
 :lang: es
 
