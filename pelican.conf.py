@@ -17,7 +17,7 @@ FILES_TO_COPY = (( 'CNAME', 'CNAME'),)
 #JINJA_EXTENSIONS
 #JINJA_FILTERS
 LOCALE = 'es_MX'
-#MARKUP
+MARKUP = [ 'rst', 'md', 'asc' ]
 IGNORE_FILES = [ '.#*', '*.*~' ]
 #MD_EXTENSIONS
 #OUTPUT_PATH
