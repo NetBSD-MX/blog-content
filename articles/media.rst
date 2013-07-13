@@ -1,10 +1,10 @@
 Grabando CD's and DVD-R
-######################
+#######################
 :date: 2013-07-13 19:40
 :author: Francisco Valladolid
 :tags: pkgsrc, paquetes, dvdrw
 :category: pkgsrc
-:slug: pkgsrc-binarios
+:slug: media
 :lang: es
 
 Instalando lo necesario
