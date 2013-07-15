@@ -1,6 +1,6 @@
 Perl Dancer y NetBSD
-====================
-:date: 2013-06-26 16:40
+####################
+:date: 2013-07-13 22:40
 :author: asarch
 :tags: perl, web, lighttpd, dancer, cpan
 :category: programacion 
@@ -9,88 +9,88 @@ Perl Dancer y NetBSD
 
 .. contents::
 
-Instalamos el servidor lighttpd:
---------------------------------
 
-    ``pkg_add -v lighttpd ``
+Instalación
+-----------
+
+Instalamos el servidor **lighttpd**:
+
+``pkg_add -v lighttpd ``
 
 Instalamos los módulos de **Perl** con **CPAN** necesarios (algunos de
 ellos no están disponibles como paquetes binarios):
 
-::
-
-    cpan install YAML
-    cpan install Plack
-    cpan install FCGI
-    cpan install FCGI::ProcManager
-    cpan install Dancer
+| ``cpan install YAML``
+| ``cpan install Plack``
+| ``cpan install FCGI``
+| ``cpan install FCGI::ProcManager``
+| ``cpan install Dancer``
 
 Configuración
 -------------
- * Creamos el script de booteo:
 
-    ``cp /usr/pkg/share/examples/rc.d/lighttpd /etc/rc.d``
+1. Creamos el script de booteo:
 
- * Lo habilitamos para el inicio:
+``cp /usr/pkg/share/examples/rc.d/lighttpd /etc/rc.d``
 
-    ``vi /etc/rc.conf``
-    ``lighttpd=YES``
+2. Lo habilitamos para el inicio:
 
- * Habilitamos el módulo de **FastCGI**:
+| ``vi /etc/rc.conf``
+| ``lighttpd=YES``
 
-    | ``vi /usr/pkg/etc/lighttpd/modules.conf``
-    | ``server.modules = (``
-    |      ``...,``
-    |      ``"mod_fastcgi"``   
-    | ``)``
+3. Habilitamos el módulo de **FastCGI**:
 
- * Configuramos el **lighttpd** para el trabajo con **NetBSD**:
+| ``vi /usr/pkg/etc/lighttpd/modules.conf``
+| ``server.modules = (``
+| ``    ...,``
+| ``    "mod_fastcgi"``
+| ``)``
 
-    | ``vi /usr/pkg/etc/lighttpd/lighttpd.conf``
-    |     ``var.server_root="/var/www"``
-    |     ``#server.event_handler="linux-sisepoll"``
-    |     ``#server.network_backend="linux-sendfile"``
-    |     ``#server.use_ipv6="enable"``
+4. Configuramos el **lighttpd** para el trabajo con **NetBSD**:
 
- * Creamos los directorios necesarios:
+| ``vi /usr/pkg/etc/lighttpd/lighttpd.conf``
+| ``var.server_root="/var/www"``
+| ``#server.event_handler="linux-sisepoll"``
+| ``#server.network_backend="linux-sendfile"``
+| ``#server.use_ipv6="enable"``
 
-   |  ``mkdir /var/www/htdocs``
-   |  ``mkdir /var/log/lighttpd``
+5. Creamos los directorios necesarios:
 
- * Arreglamos los permisos:
+| ``mkdir /var/www/htdocs``
+| ``mkdir /var/log/lighttpd``
 
-   | ``groupadd lighttpd``
-   | ``useradd lighttpd``
-   | ``chown -R lighttpd:lighttpd /var/log/lighttpd``
+6. Arreglamos los permisos:
 
-Creando una aplicacion:
------------------------
+| ``groupadd lighttpd``
+| ``useradd lighttpd``
+| ``chown -R lighttpd:lighttpd /var/log/lighttpd``
 
- * Creamos una aplicación **Dancer**:
+Contenido
+---------
 
-    ``dancer -a MyWeb::App``
+1. Creamos una aplicación **Dancer**:
 
- * Iniciamos la aplicación para crear el socket de conexión:
+``dancer -a MyWeb::App``
 
-  |  ``export PATH=$PATH:/usr/pkg/lib/perl5/site_perl/bin``
-  |  ``cd MyWeb-App``
-  |  ``plackup -s FCGI --listen /tmp/socket bin/app.pl``
+2. Iniciamos la aplicación para crear el socket de conexión:
 
-  Habilitamos el socket en **lighttpd**:
+| ``export PATH=$PATH:/usr/pkg/lib/perl5/site_perl/bin``
+| ``cd MyWeb-App``
+| ``plackup -s FCGI --listen /tmp/socket bin/app.pl``
 
-::
+3. Habilitamos el socket en **lighttpd**:
 
-         vi /usr/pkg/etc/lighttpd/lighttpd.conf
-         $HTTP["url"] =~ "^/app" {
-             fastcgi.server += (
-                 "/app" => (
-                     "" => (
-                         "socket" => "/tmp/socket",
-                         "check-local" => "disable"
-                      )
-                 )
-             )
-         }
+| ``vi /usr/pkg/etc/lighttpd/lighttpd.conf``
+| ``$HTTP["url"] =~ "^/app" {``
+| ``    fastcgi.server += (``
+| ``        "/app" => (``
+| ``            "" => (``
+| ``                "socket" => "/tmp/socket",``
+| ``                "check-local" => "disable"``
+| ``            )``
+| ``        )``
+| ``   )``
+| ``}``
 
 Referencias
 -----------
